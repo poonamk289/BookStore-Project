@@ -22,13 +22,14 @@ const Navbar =({setValue})=>{
                 <input  type="text" placeholder="Search for the book you want and read it now..."
                     onChange={(e)=>(setInput(e.target.value))}
                 />
-                <button  >Search</button>
+                <button onClick={()=>setValue(input)}>Search</button>
            </div>
 
            <div className="image-link">
                 <img src="./images/heart.svg"/>
                 <img src="./images/notifications.svg"/>
                 <img src="./images/diamond.svg"/>
+                <img src="./images/profile.svg"/>
 
            </div>
         </div>

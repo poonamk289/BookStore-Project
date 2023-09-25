@@ -4,15 +4,31 @@ import Hero from "./Components/Hero/Hero";
 import axios from "axios";
 import Book from "./Components/Hero/Book";
 const App=()=>{
-    // const [value,setValue] = useState("");
+    const [value,setValue] = useState("");
     const [books,setBooks] = useState();
     const [books2,setBooks2] = useState();
-    // console.log(value);
+    console.log(value);
 
    
     console.log(books);
     let url
-   
+    useEffect(()=>{ 
+        async function fetchInput(){
+            let arr = value.split(" ");
+            let  inputval=arr.join("+");
+            console.log(inputval)
+            try{
+                url = `https://www.googleapis.com/books/v1/volumes?q=${inputval}`
+             
+                const response = await axios.get(url);
+               
+                setBooks(response.data.items)
+                setBooks2("");
+            }catch(err){
+                console.log(err);
+            }}
+            fetchInput();
+    },[value])
     useEffect(()=>{
         
         async function fetch(){
@@ -22,14 +38,9 @@ const App=()=>{
              
                 const response = await axios.get(url);
                 const response2 = await axios.get("https://www.googleapis.com/books/v1/volumes?q=Sherlock+Holmes")
-                setBooks("");
-                console.log(response.data.items);
-                console.log(response2.data.items);
+                setBooks("");  
                 setBooks(response.data.items)
                 setBooks2(response2.data.items)
-                // setBooks("")
-                // setBooks2(response2.data.items)
-        
             }catch(err){
                 console.log(err);
             }}
@@ -46,7 +57,7 @@ const App=()=>{
     return(
         <div>
           
-            <Navbar   />
+            <Navbar   setValue={setValue}/>
           
             <div>
                 {

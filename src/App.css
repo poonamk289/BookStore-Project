@@ -7,6 +7,8 @@ body{
 }
 .navbar{
     background-color: rgb(35, 35, 35);
+    position:fixed;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,7 +55,7 @@ body{
 }
 .image-link{
     display: flex;
-    gap: 10px;
+    gap: 20px;
 
 }
 .image-link>img{
@@ -62,9 +64,10 @@ body{
 .book-detail{
     display: flex;
     flex-direction: column;
+    gap: 5px;
     justify-content: space-between;
-    padding: 15px;
-    background-color:rgb(76, 109, 156);
+    padding: 20px;
+    padding-left: 50px;
     color:white;
     /* width: 27vw; */
     /* height: fit-content; */
@@ -76,11 +79,25 @@ body{
 .book{
     display: flex;
     /* */
-    margin: 5px;
+    margin: 15px;
+    margin-bottom: 30px;
     padding-top: 20px;
+   
+   
+    border-radius: 10px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+   
     /* justify-content: center; */
     /* align-items: center; */
     /* width: calc(50% - 30px); */
+
+}
+.book>img{
+    height:35vh;
+    width:20vw;
+     transform: rotate(-6deg);
+     align-self: center;
 
 }
 .books-3{
@@ -88,24 +105,32 @@ body{
    width: calc(50% - 20px); */
     /* width:95vw;    */
     /* gap: 10px; */
-    padding: 30px 10px;
+    padding: 30px 50px;
 
 }
 .expandable{
     width: 90vw;
+    background-color:rgba(121, 140, 222, 0.953);
+    /* border: 1px dotted rgb(20, 20, 149); */
+    box-shadow: 5px 5px 12px rgb(131, 218, 252);
 }
 .collapsed{
     width: 50vw;
+    background-color:rgba(194, 100, 88, 0.995);
+    /* border: 1px dotted rgb(255, 42, 0); */
+    box-shadow: -5px -5px 12px rgb(237, 241, 141);
 }
 
 
 .book-det-info{
 
     padding-top: 10px;
- 
-    font-size: 17px;
-    font-weight: 500;
-    color: rgb(45, 46, 55);
+    
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(244, 245, 249, 0.821);
+    text-shadow: 1px 1px 2 rgba(20, 20, 57, 0.489);
+    
 
 }
 .book-det-info> span> span{
@@ -127,4 +152,13 @@ body{
 .preview-info>span>a{
     text-decoration: none;
     color: rgb(229, 226, 226);
+}
+
+.writer-publish{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(195, 192, 192);
+    padding-bottom: 10px;
 }
